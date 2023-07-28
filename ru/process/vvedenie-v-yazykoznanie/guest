@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="https://openu.kz/images/favicon_new.ico" type="image/x-icon">
+    <meta name="csrf-token" content="bg6gINN2xkIIvyzSqDQiTzMmMDSAu4DfQY20dNK2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    
+            <title>OpenU</title>
+
+
+    
+        <link href="/video_player/css/style.css" rel="stylesheet"/>
+
+    
+    <link href="/css/style.css?id=c2e108e26624083c06c3" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112480784-1"></script>
+        <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
+
+    <script src="/js/particles.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112480784-1');
+    </script>
+    <!-- Yandex.Metrika counter -->
+            <script type="text/javascript" >
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter51251080 = new Ya.Metrika2({
+                            id:51251080,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks2");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/51251080" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+    <style>
+        .hidden {
+            display: none !important;
+        }
+        @-webkit-keyframes ld {
+            0%   { transform: rotate(0deg) scale(1); }
+            50%  { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        @-moz-keyframes ld {
+            0%   { transform: rotate(0deg) scale(1); }
+            50%  { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        @-o-keyframes ld {
+            0%   { transform: rotate(0deg) scale(1); }
+            50%  { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        @keyframes  ld {
+            0%   { transform: rotate(0deg) scale(1); }
+            50%  { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        .loading-progress {
+            position: relative;
+            opacity: .8;
+            color: transparent !important;
+            text-shadow: none !important;
+        }
+
+        .loading-progress:hover,
+        .loading-progress:active,
+        .loading-progress:focus {
+            cursor: default;
+            color: transparent;
+            outline: none !important;
+            box-shadow: none;
+        }
+
+        .loading-progress:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            background: transparent;
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+
+            width: 24px;
+            height: 24px;
+
+            -webkit-animation: ld 1s ease-in-out infinite;
+            -moz-animation:    ld 1s ease-in-out infinite;
+            -o-animation:      ld 1s ease-in-out infinite;
+            animation:         ld 1s ease-in-out infinite;
+        }
+    </style>
+    <script>
+                    window.L = {"error_on_server":"\u041e\u0448\u0438\u0431\u043a\u0430 \u043d\u0430 \u0441\u0442\u043e\u0440\u043e\u043d\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u0430","error":"\u041e\u0448\u0438\u0431\u043a\u0430","message":"\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435","answer_correct":"\u0412\u044b \u043e\u0442\u0432\u0435\u0442\u0438\u043b\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e","again":"\u041f\u0440\u043e\u0439\u0442\u0438 \u0435\u0449\u0435 \u0440\u0430\u0437","again_lesson":"\u0415\u0449\u0435 \u0440\u0430\u0437 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0443\u0440\u043e\u043a","next_lesson":"\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0443\u0440\u043e\u043a","completed_test":"\u0412\u044b \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0438 \u0442\u0435\u0441\u0442","result":"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u0442\u0435\u0441\u0442\u0430","lesson":"\u0423\u0440\u043e\u043a","completed":"\u041f\u0440\u043e\u0439\u0434\u0435\u043d\u043e","overall_score":"\u041e\u0431\u0449\u0438\u0439 \u0431\u0430\u043b\u043b","close":"\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c","test_question":" \u0422\u0435\u0441\u0442","work_on_errors":"\u0420\u0430\u0431\u043e\u0442\u0430 \u043d\u0430\u0434 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438","complete":"\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044c","correct_answer_count":"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0445 \u043e\u0442\u0432\u0435\u0442\u043e\u0432","incorrect_answer_count":"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0435\u0449\u0435 \u043e\u0434\u0438\u043d \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u043e\u0442\u0432\u0435\u0442\u0430!","course_lesson_remove_confirm":"\u0412\u044b \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442\u0435 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435?","achievement_congratulations":"\u0422\u0430\u043a \u0434\u0435\u0440\u0436\u0430\u0442\u044c!","achievement_new_levels":"\u041d\u043e\u0432\u043e\u0435 \u0434\u043e\u0441\u0442\u0438\u0436\u0435\u043d\u0438\u0435: ","achievement_points":"\u0431\u0430\u043b\u043b\u043e\u0432","achievement_two_points":"\u0431\u0430\u043b\u043b\u0430","achievement_step":"\u0441\u0442\u0435\u043f\u0435\u043d\u0438"};
+        window.core_project = {"csrfToken":"bg6gINN2xkIIvyzSqDQiTzMmMDSAu4DfQY20dNK2","isAuth":false,"locale":"ru","messages":null,"errors":null};
+    </script>
+    </head>
+<body>
+<div id="app" style="width: 100%">
+        <div class="course-page">
+
+        <aside class="course-menu-wrapper is-active" data-menu="course-menu">
+
+    <section class="course-menu__head">
+        <a href="" class="course-menu__logotype" data-toggle="modal" data-target="#modal-redirect-confirmation" style="background-image: url(/images/course-menu-logotype.png);"></a>
+        <div class="course-menu__progress-wrapper">
+            <div class="course-menu__progress-label mrgn_b10">Ваш прогресс: 0%</div>
+            <div class="course-menu__progres-scale"><span style="width: 0%;"></span></div>
+        </div>
+        <div class="course-menu__hide" data-menu-target="course-menu"></div>
+    </section>
+
+    <section class="course-menu__title mrgn_b25">Введение в языкознание</section>
+
+    <section class="course-menu__body" style="width: 100%">
+
+        <nav class="course-menu" style="width: 100%">
+            <ul class="course-menu__list">
+                                                            <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1757" class="select-lesson">Лекция 1. Что такое язык?</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1760" class="select-lesson">Лекция 2. Морфология. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1762" class="select-lesson">Лекция 3. Морфология. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1763" class="select-lesson">Лекция 4. Синтаксис</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1764" class="select-lesson">Лекция 5. Языковая семантика. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1765" class="select-lesson">Лекция 6. Языковая семантика. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1767" class="select-lesson">Лекция 7. Фонетика. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1768" class="select-lesson">Лекция 8. Фонетика. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1769" class="select-lesson">Лекция 9. Фонология: образцы звуков языка. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1770" class="select-lesson">Лекция 10. Фонология: образцы звуков языка. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1771" class="select-lesson">Лекция 11. Язык и общество. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1772" class="select-lesson">Лекция 12. Язык и общество. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1773" class="select-lesson">Лекция 13. Язык и общество. Часть 3</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1774" class="select-lesson">Лекция 14. Язык и общество. Часть 4</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1775" class="select-lesson">Лекция 15. Изменение языка: временные периоды. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1776" class="select-lesson">Лекция 16. Изменение языка: временные периоды. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1777" class="select-lesson">Лекция 17. Изменение языка: временные периоды. Часть 3</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1778" class="select-lesson">Лекция 18. Овладение языком</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1779" class="select-lesson">Лекция 19. Познание языка</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1780" class="select-lesson">Лекция 20. Язык и человеческий мозг. Часть 1</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1781" class="select-lesson">Лекция 21. Язык и человеческий мозг. Часть 2</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1782" class="select-lesson">Лекция 22. Язык и человеческий мозг</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1783" class="select-lesson">Лекция 23. Компьютерная обработка языка</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1784" class="select-lesson">Лекция 24. Приложения вычислительной лингвистики</a>
+                                </div>
+                                                    </li>
+                                                                                                        <li class="course-menu__list-item">
+                                                            <div class="course-menu__list-item-label">
+                                    <i class="material-icons">play_circle_outline</i>
+                                    <a href="/ru/process/vvedenie-v-yazykoznanie/guest/lesson/1785" class="select-lesson">Лекция 25. Письменная часть: алфавит языка</a>
+                                </div>
+                                                    </li>
+                                                            
+                            </ul>
+        </nav>
+    </section>
+</aside>
+
+        <header class="course-page__head">
+            <div class="course-page__menu-icon" data-menu-target="course-menu"></div>
+            <img src="/images/logotype_2019.png" alt="">
+            <div class="course-page__quit" data-toggle="modal" data-target="#modal-exit-confirmation"></div>
+        </header>
+
+        <main class="course-page__body">
+            <section class="course-page__content">
+                <h1 class="course-page__title">Лекция 1. Что такое язык?</h1>
+                <section class="course-page__section">
+
+                    <div class="course-page__video-wrapper">
+
+                        <a class="course-page__navigation-prev keyboard_control" href="/ru/process/vvedenie-v-yazykoznanie/lesson/1757/prev"></a>
+                        
+                            
+                                <div class="course__video">
+                                    <div class="video-wrapper">
+                                        <div class="video__preview" style="display:flex">
+                                            <video id="video-player"></video>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            
+                            
+                                
+                            
+                        
+                                                    <a class="course-page__navigation-next-new keyboard_control" href="/ru/process/vvedenie-v-yazykoznanie/lesson/1757/test"></a>
+                        
+
+                    </div>
+                </section>
+                <section class="course-page__device-navigation-wrapper">
+                    <a class="disabled course-page__device-navigation-prev" href="/ru/process/vvedenie-v-yazykoznanie/lesson/1757/prev">Предыдущая лекция</a>
+
+                                            <a class="course-page__device-navigation-next-new" data-quest="3" href="/ru/process/vvedenie-v-yazykoznanie/lesson/1757/test">Следующая лекция</a>
+                    
+                </section>
+
+                <section class="course-page__section">
+        <h2 class="course-page__title-section">Материалы видеолекции</h2>
+        <div class="course-page__media-wrapper">
+            <div class="row">
+
+                                    <div class="cell-6 course-page__media-cell">
+                        <a class="course-button button_type_pdf button_theme_blue" href="https://openu.kz/storage/lessons/1757/vvedenie-v-yazykoznanie_1_lecture.pdf" download>
+                            <span>Скачать лекцию</span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+            <div class="row">
+
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+
+
+                
+            </section>
+
+        </main>
+
+    </div>
+
+    <div class="modal fade modal-exit-confirmation" id="modal-exit-confirmation" tabindex="-1" style="display:none">
+        <div class="modal-dialog" style="margin: auto 0;">
+            <div class="modal-close" data-toggle="modal" data-target="#modal-exit-confirmation"></div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="exit-confirmation__text">Вы уверены, что хотите покинуть этот курс?</div>
+                    <div class="exit-confirmation__bottom">
+                        <a class="button button_theme_green" href="/ru/courses/vvedenie-v-yazykoznanie">Да</a>
+                        <a class="button button_theme_blue" href="" data-toggle="modal" data-target="#modal-exit-confirmation">Нет</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-exit-confirmation" id="modal-redirect-confirmation" tabindex="-1" style="display:none">
+        <div class="modal-dialog" style="margin: auto 0;">
+            <div class="modal-close" data-toggle="modal" data-target="#modal-redirect-confirmation"></div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="exit-confirmation__text">Вы уверены, что хотите перейти на главную страницу?</div>
+                    <div class="exit-confirmation__bottom">
+                        <a class="button button_theme_green" href="/ru">Да</a>
+                        <a class="button button_theme_blue" href="" data-toggle="modal" data-target="#modal-redirect-confirmation">Нет</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="survey">
+        <survey :course="30" locale="ru"></survey>
+    </div>
+
+    
+        
+            
+        
+    
+
+
+</div>
+
+<div class="loading">
+    <div>
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+
+<div class="notify-block-wrapper" data-notify-container="default"></div>
+
+
+
+<script src="/js/manifest.js?id=0225916a5d4fbc86a881" type="text/javascript"></script>
+<script src="/js/vendor.js?id=d2668717a449960705e7" type="text/javascript"></script>
+<script src="/js/bundle.js?id=afaafcc9a24f5080cc17" type="text/javascript"></script>
+<script src="/js/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+    <script>
+
+        function next_lesson_handler () {
+            var href = "\/ru\/process\/vvedenie-v-yazykoznanie\/lesson\/1757\/next";
+            window.location.href = href;
+        }
+
+        // $('.course-page__navigation-next-new').on('click', function (e) {
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     next_lesson_handler();
+        // });
+        //
+        // $('.course-page__device-navigation-next-new').on('click', function (e) {
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     next_lesson_handler();
+        // });
+
+        $('body').on('keydown', function (e) {
+
+            if (e.keyCode === 39) {
+                e.preventDefault();
+                e.stopPropagation();
+                next_lesson_handler();
+            }
+
+            if (e.keyCode === 37) {
+                var href = $('.course-page__navigation-prev').attr('href');
+                window.location.href = href;
+            }
+
+            if (e.keyCode === 27) {
+                $('.course-page__quit').trigger('click');
+            }
+
+        });
+
+        setTimeout(sendStatus(), 5000);
+
+        var player;
+
+        var tag = document.createElement('script');
+
+        tag.src = 'https://www.youtube.com/iframe_api';
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: '',
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        var done = false;
+        var send = false;
+        var timer;
+
+        function onPlayerStateChange(event) {
+
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                timer = setTimeout(sendStatus, 6000);
+                done = true;
+            } else if (event.data == YT.PlayerState.PAUSED) {
+                clearTimeout(timer);
+                done = false;
+            } else if (event.data == YT.PlayerState.ENDED) {
+                sendStatus();
+                done = true;
+            }
+        }
+
+        function sendStatus() {
+            // var percent = (player.getCurrentTime() / player.getDuration()) * 100;
+            var percent = 70;
+            if (!send && percent >= 70 && !1) {
+                $.ajax({
+                    url: '/ru/process/vvedenie-v-yazykoznanie/lesson/1757/status',
+                    method: 'POST',
+                    dataType: 'JSON',
+                    data: {
+                        _token: window.core_project.csrfToken,
+                        success_video: true
+                    },
+                    success: function (response) {
+
+                    },
+                    error: function (response) {
+
+                    }
+                });
+                clearTimeout(timer);
+                send = true;
+            }
+            timer = setTimeout(sendStatus, 6000);
+        }
+
+        $(document).ready(function () {
+
+            var flag = false;
+
+            
+
+                
+
+                
+
+                    
+
+                    
+
+                        
+                        
+
+                        
+                            
+                            
+                        
+
+                        
+
+                    
+
+                
+
+            
+        });
+
+    </script>
+    <script src="/video_player/js/build.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		const myvideo = new Videoplayer({
+			pName: 'video-player',
+			theme: 'bilimland-theme',
+            playlist: [
+                                {
+                    id: parseInt("1891"),
+                    cover: '/images/watermark.jpg',
+                    title: 'Введение в языкознание',
+                    src: [
+                        {
+                            code: '720p',
+                            label: '720p',
+                            src: '/ru/lessons/video/1891/norox7dvsv29gouujbywgpjgrdxk393w'
+                        },
+
+                                            ]
+                },
+                            ]
+		});
+		if ("1") {
+			myvideo.init();
+		}
+    </script>
+<script src="/js/app.js?id=f92a81692d7dbc83febc"></script>
+<script>
+
+    $(function () {
+        autosize($('textarea'));
+    });
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function commentCounter() {
+        var $titleSection = $('.course-page__title-section_is_active');
+        var count = parseInt($titleSection.find('span').text(), 10);
+        if (count > 0) {
+            $titleSection.find('span').text('');
+            $titleSection.find('span').text(count + 1);
+        } else {
+            $titleSection.removeClass('course-page__title-section_is_active').hide();
+            $('.course-page__title-section_not_active')
+                .addClass('course-page__title-section_is_active')
+                .show()
+                .find('span').text(1);
+        }
+    }
+
+    // $('.comment__body').on('submit', function (e) {
+    $('.comment__button').on('click', function (e) {
+        e.preventDefault();
+
+        $(document).ajaxStart(function () {
+            loader_show();
+        });
+
+        $(document).ajaxComplete(function () {
+            loader_hide();
+        });
+
+        var $self = $(this);
+
+        var $selfForm = $self.closest('form');
+
+        var formData = new FormData($selfForm[0]);
+
+        $.ajax({
+            url: $selfForm.attr('action'),
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                $self
+                    .closest('.comment_type_add')
+                    .after(response.content)
+                ;
+
+                commentCounter();
+
+                $selfForm[0].reset();
+
+                $selfForm.find('.comment__area-field').removeClass('error_input');
+                $selfForm.siblings('.error_hint').text('').hide();
+
+                achievementAjax('/ru/achievement-detect', response.comment.id, 'comment_lesson', 'write_comment');
+
+            },
+            error: function (response) {
+                $(document).ajaxComplete(function(){
+                    loader_hide();
+                });
+                $selfForm.find('.comment__area-field').addClass('error_input');
+                $selfForm.siblings('.error_hint').text(response.responseJSON.errors.body[0]).show();
+            }
+        });
+    });
+
+    $('body').delegate('.comment__area-field', 'change paste keyup', function (e) {
+        $self = $(this);
+        if ($self.val().length > 0) {
+            $self.removeClass('error_input');
+            $('.' + $self.attr('name') + '_error').fadeOut(500);
+        }
+    });
+
+    $('body').delegate('.comment__info_type_like', 'click', function (e) {
+
+        $(document).ajaxStart(function () {
+            loader_show();
+        });
+
+        $(document).ajaxComplete(function () {
+            loader_hide();
+        });
+
+        var $el = $(this);
+        var commentId = $el.closest('.lesson_comment_block').attr('data-id');
+
+        $.ajax({
+            url: '/' + window.core_project.locale + '/comments/' + commentId + '/like',
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var count = parseInt($el.text());
+                if (parseInt(response, 10) === 1) {
+                    $el.addClass('comment__info_type_user_liked');
+                    $el.text(count + 1);
+                } else {
+                    $el.removeClass('comment__info_type_user_liked');
+                    $el.text(count - 1);
+                }
+            }
+        });
+
+    });
+
+    $('body').delegate('.comment__info_type_answer', 'click', function (e) {
+        var $self = $(this);
+
+        if ($self.hasClass('active_reply')) {
+
+            $('.comment_type_add_reply').fadeOut(300);
+
+            setTimeout(function () {
+                $('.comment_type_add_reply').remove();
+            }, 350);
+
+            $self.removeClass('active_reply');
+
+        } else {
+
+            $('.comment_type_add_reply').fadeOut(500).remove();
+
+            $self.addClass('active_reply');
+
+            var commentAddForm = $('.comment_type_add').clone();
+            var lessonId = $self.closest('.course-page__comments-wrapper').attr('data-lesson-id');
+            var commentId = $self.closest('.comment__content').attr('data-comment-id');
+
+            commentAddForm.addClass('comment_type_add_reply');
+            var formReply = commentAddForm.find('form');
+            formReply[0].reset();
+
+            formReply.find('.error_input').removeClass('error_input');
+            formReply.siblings('.error_hint').hide();
+
+            formReply.attr('action', '/ru/lessons/comment/reply/' + commentId);
+            formReply.append('<input type="hidden" value="' + commentId + '" name="cid" id="cid">');
+            formReply.find('button').addClass('comment__button_reply');
+
+            $self.closest('.comment__content').append(commentAddForm.hide().fadeIn(500));
+
+            formReply.find('textarea').focus();
+        }
+    });
+
+    $('body').delegate('.comment__button_reply', 'click', function (e) {
+
+        e.preventDefault();
+
+        $(document).ajaxStart(function () {
+            loader_show();
+        });
+
+        $(document).ajaxComplete(function () {
+            loader_hide();
+        });
+
+        var $self = $(this);
+
+        var $selfForm = $self.closest('form');
+
+        var formData = new FormData($selfForm[0]);
+
+        $.ajax({
+            url: $selfForm.attr('action'),
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                if (parseInt(response.isFirstReply, 10) === 1) {
+
+                    $self
+                        .closest('.lesson_comment_block')
+                        .after('<div class="comment-answer-wrapper"><div class="comment-answer-title mrgn_b15"></div></div>')
+                    ;
+                }
+
+                $self
+                    .closest('.lesson_comment_block')
+                    .next()
+                    .find('.comment-answer-title')
+                    .after(response.content)
+                ;
+
+                commentCounter();
+
+                $('.comment_type_add_reply').remove();
+
+                $selfForm.find('.comment__area-field').removeClass('error_input');
+                $selfForm.siblings('.error_hint').text('').hide();
+            },
+            error: function (response) {
+                $(document).ajaxComplete(function(){
+                    loader_hide();
+                });
+                $selfForm.find('.comment__area-field').addClass('error_input');
+                $selfForm.siblings('.error_hint').text(response.responseJSON.errors.body[0]).show();
+            }
+        });
+
+    });
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        function courseMenuListen()
+        {
+            $(".course-menu__list").on("click", ".lessons-list-toggle", function()
+            {
+                var self = $(this);
+                if(!$(self).parent().hasClass("status_submenu_show"))
+                {
+                    $(self).parent().addClass("status_submenu_show");
+                    $(self).closest(".course-menu__list-item")
+                        .children(".course-menu__submenu-body").css("display", "none");
+                    setTimeout(function()
+                    {
+                        $(self).closest(".course-menu__list-item")
+                            .children(".course-menu__submenu-body")
+                            .show(200);
+                    }, 0);
+                }
+                else
+                {
+                    $(self).parent().removeClass("status_submenu_show");
+                    $(self).closest(".course-menu__list-item")
+                        .children(".course-menu__submenu-body").css("display", "block");
+                    setTimeout(function () {
+                        $(self).closest(".course-menu__list-item")
+                            .children(".course-menu__submenu-body")
+                            .hide(200);
+                    }, 0);
+                }
+            });
+        }
+
+        courseMenuListen();
+        toggleMenu();
+        commentAdd(/* see the arguments in the bundle.js */);
+    });
+
+</script>
+</body>
+</html>
